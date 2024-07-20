@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 
 BATCH_FILES = {}
 
-@Client.on_message(filters.command("hackerjr") & filters.incoming)
+@Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [
@@ -504,7 +504,7 @@ async def save_template(client, message):
     await save_group_settings(grp_id, 'template', template)
     await sts.edit(f"Successfully changed template for {title} to\n\n{template}")
 
-@Client.on_message(filters.command("start") & filters.incoming)
+@Client.on_message(filters.command("hacker") & filters.incoming)
 async def start(client, message):
     await message.reply_sticker("CAACAgUAAxkBAAEHNZFmnDLf44PRUaEyp_MIIKUrrkiweQACHQADwSQxMazWY2docuTnHgQ") 
      
